@@ -1,0 +1,69 @@
+// program that finds the price of a flight ticket
+
+import java.util.Scanner;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("ENTER DISTANCE (KM) : ");
+        int distance = input.nextInt();
+        double realPrice = 0.10 * distance;
+        System.out.println("REAL PRICE : "+realPrice+" $");
+        System.out.print("SELECT THE TYPE OF TRIP (ONE DIRECTION TRIP == 1 OR DEPARTURE AND RETURN TRIP ==2) : ");
+        int typeOftrip = input.nextInt();
+        if (typeOftrip == 2) {
+            System.out.print("ENTER YOUR AGE : ");
+            int age = input.nextInt();
+            if (age < 12) {
+                double a = realPrice * 0.50;
+                double b = realPrice - a;
+                double c = b * 0.20;
+                double totalPrice =   2 * (b - c);
+                System.out.print("TOTAL PRICE : "+totalPrice+"$");
+
+            } else if (age >= 12 && age <=14) {
+                double a = realPrice * 0.10;
+                double b = realPrice - a;
+                double c = b * 0.20;
+                double totalPrice = 2 * (b - c);
+                System.out.print("TOTAL PRICE : " +totalPrice+" $");
+
+            }else if (age >= 65) {
+                double a = realPrice * 0.30;
+                double b = realPrice - a;
+                double c = b * 0.20;
+                double totalPrice = 2 * (b - c);
+                System.out.print("TOTAL PRICE : " +totalPrice+" $");
+
+            } else {
+                double a = realPrice * 0.20;
+                double totalPrice = realPrice - a;
+                System.out.print("TOTAL PRICE : "+totalPrice+" $");
+            }
+        } else if (typeOftrip == 1) {
+            System.out.print("ENTER YOUR AGE : ");
+            int age = input.nextInt();
+            if (age < 12) {
+                double a = realPrice * 0.50;
+                double totalPrice = realPrice - a;
+                System.out.print("TOTAL PRICE : "+totalPrice+"$");
+            } else if (age >=12 && age <= 14) {
+                double a = realPrice * 0.10;
+                double totalPrice = realPrice - a;
+                System.out.print("TOTAL PRICE : "+totalPrice+"$");
+            } else if (age >= 65) {
+                double a = realPrice * 0.30;
+                double totalPrice = realPrice - a;
+                System.out.print("TOTAL PRICE : "+totalPrice+" $");
+            } else {
+                System.out.print("TOTAL PRICE : "+realPrice+" $");
+            }
+        } else {
+            System.out.print("ENTER VALID VALUES.");
+        }
+
+
+
+
+        }
+
+}
